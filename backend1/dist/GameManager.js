@@ -11,6 +11,7 @@ export class GameManager {
         this.pendingUser = null;
     }
     addUser(user) {
+        console.log("Added user");
         this.users.push(user);
         this.addHandler(user);
     }
@@ -20,6 +21,7 @@ export class GameManager {
     addHandler(user) {
         user.on("message", (data) => {
             const message = JSON.parse(data.toString());
+            console.log(message);
             if (message.type === INIT_GAME) {
                 console.log("Message received:", data.toString());
                 if (this.pendingUser !== null) {

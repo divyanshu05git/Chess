@@ -15,6 +15,7 @@ export class GameManager{
     }
 
     addUser(user:WebSocket){
+        console.log("Added user")
         this.users.push(user);
         this.addHandler(user);
     }
@@ -26,9 +27,10 @@ export class GameManager{
     private addHandler(user:WebSocket){
         user.on("message",(data)=>{
             const message=JSON.parse(data.toString());
+            console.log(message)
 
             if(message.type===INIT_GAME){
-                console.log("Message received:", data.toString());
+                console.log("Message received:",data.toString());
                 if(this.pendingUser!==null){
                     //start a game
                     console.log("Game created")
