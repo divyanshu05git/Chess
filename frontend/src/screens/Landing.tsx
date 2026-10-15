@@ -2,7 +2,6 @@ import { useNavigate } from "react-router"
 
 export const Landing=()=>{
     const navigate=useNavigate();
-
     return (
         <main className="min-h-screen bg-white text-[#171717]">
       <div className="mx-auto flex min-h-screen max-w-6xl items-center px-6 py-12">
