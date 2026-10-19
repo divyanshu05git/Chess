@@ -47,7 +47,7 @@ export class GameManager{
             if(message.type===MOVE){
                 const game=this.games.find(e=>e.player1===user || e.player2===user)
                 if(game){
-                    game.makeMove(user,message.move)
+                    game.makeMove(user,message.payload)
                 }
             }
         })
